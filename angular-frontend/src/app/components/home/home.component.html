@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+    <h3>Client Dashboard</h3>
+    <p></p>
+
+    <!-- <h4 *ngIf="!customers"> There aren't any records in the db.</h4> -->
+
+    <div id="my-tbl">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Operations</th>
+            <th>Department</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td> {{customer.name}} </td>
+            <td> {{customer.email}} </td>
+            <td> {{customer.phone}} </td>
+            
+            <td>
+              <a routerLink="/edit/{{customer._id}}">Edit</a> || 
+              <a (click)="del(customer._id)">Delete</a>
+            </td>
+            <td> {{customer.department}} </td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      
+    </div>
+
+  </div>
+</div>

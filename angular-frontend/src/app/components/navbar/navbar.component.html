@@ -1,0 +1,30 @@
+
+<nav class="black lighten-1" role="navigation">
+  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Client Management Web Application</a>
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="auth.loggedIn()" [routerLinkActive]="['active']">
+        <a [routerLink]="['/home']" class="btn btn-navbar">Home</a>
+      </li>
+      <li *ngIf="auth.loggedIn()" [routerLinkActive]="['active']">
+          <a [routerLink]="['/customer/add']" class="btn btn-navbar">Add Client</a>
+
+        </li>
+
+
+      <li *ngIf="!auth.loggedIn()" [routerLinkActive]="['active']">
+        <a [routerLink]="['/signUp']" class="btn btn-navbar">Sign Up</a>
+      </li>
+
+      <li *ngIf="!auth.loggedIn()" [routerLinkActive]="['active']">
+        <a [routerLink]="['/']" class="btn btn-navbar">Sign In</a>
+      </li>
+      <li *ngIf="auth.loggedIn()"><a (click)="onLogout()" href="#" class="btn btn-navbar">Sign Out</a></li>
+
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
